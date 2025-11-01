@@ -1,5 +1,9 @@
-// src/config/swagger.js
 import swaggerJsdoc from "swagger-jsdoc";
+
+const isProduction = process.env.NODE_ENV === 'production';
+const baseUrl = isProduction 
+  ? 'https://cazadoresbackendsql-production.up.railway.app'
+  : `http://localhost:${process.env.PORT || 4001}`;
 
 const swaggerOptions = {
   definition: {
@@ -11,12 +15,8 @@ const swaggerOptions = {
     },
     servers: [
       {
-        url: `http://localhost:${process.env.PORT || 4001}`,
-        description: "Servidor local"
-      },
-      {
-        url: "cazadoresbackendsql-production.up.railway.app",
-        description: "Servidor de producción"
+        url: baseUrl,
+        description: isProduction ? "Servidor de producción" : "Servidor de desarrollo"
       }
     ],
   },
