@@ -15,7 +15,7 @@ const swaggerOptions = {
         description: "Servidor local"
       },
       {
-        url: "https://tu-app-deploy.railway.app",
+        url: "cazadoresbackendsql-production.up.railway.app",
         description: "Servidor de producción"
       }
     ],
