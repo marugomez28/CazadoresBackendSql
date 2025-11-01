@@ -3,7 +3,7 @@ import 'dotenv/config';
 import cors from "cors";
 import swaggerUi from "swagger-ui-express";
 import huntersRouter from "./routes/hunters.routes.js";
-import { swaggerSpec } from "./config/swagger.js";
+import { swaggerSpec } from "./swagger/swagger.js";
 
 const app = express();
 
